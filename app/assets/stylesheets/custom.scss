@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+@import "tempusdominus-bootstrap-4.css";
 
 /* mixins, variables, etc. */
 
@@ -56,7 +58,7 @@ h2 {
 
 p {
   font-size: 1.1em;
-  line-height: 1.7em;
+  line-height: 1.7;
 }
 
 
@@ -231,6 +233,19 @@ input {
   margin-left: 0;
 }
 
+#user_venue {
+  width: auto;
+  margin-left: 0;
+}
+
+.input-group-append {
+  display: inline-block;
+}
+
+.input-group-text {
+  display: inline-block;
+}
+
 /* Users index */
 
 .users {
@@ -289,3 +304,4 @@ span.picture {
     border: 0;
   }
 }
+

@@ -16,10 +16,12 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div#error_explanation'
     # 有効な送信
     content = "This micropost really ties the room together"
+    event_date = Date.tomorrow
     picture = fixture_file_upload('test/fixtures/rails.png', 'image/png')
     assert_difference 'Micropost.count', 1 do
       post microposts_path, params: { micropost:
                                       { content: content,
+                                        event_date: event_date,
                                         picture: picture } }
     end
     assert assigns(:micropost).picture?
@@ -45,7 +47,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     log_in_as(other_user)
     get root_path
     assert_match "0 microposts", response.body
-    other_user.microposts.create!(content: "A micropost")
+    other_user.microposts.create!(content: "A micropost", event_date: 2.days.since)
     get root_path
     assert_match "1 micropost", response.body
   end

@@ -9,6 +9,10 @@ gem 'mini_magick',             '4.7.0'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap', '~> 4.3.1'
+gem "font-awesome-rails"
+gem 'momentjs-rails'
+gem "bootstrap4-datetime-picker-rails"
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'

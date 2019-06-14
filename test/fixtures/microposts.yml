@@ -1,46 +1,55 @@
 orange:
   content: "I just ate an orange!"
+  event_date: <%= 2.days.since %>
   created_at: <%= 10.minutes.ago %>
   user: michael
 
 tau_manifesto:
   content: "Check out the @tauday site by @mhartl: http://tauday.com"
+  event_date: <%= 2.days.since %>
   created_at: <%= 3.years.ago %>
   user: michael
 
 cat_video:
   content: "Sad cats are sad: http://youtu.be/PKffm2uI4dk"
+  event_date: <%= 2.days.since %>
   created_at: <%= 2.hours.ago %>
   user: michael
 
 most_recent:
   content: "Writing a short test"
+  event_date: <%= 1.days.since %>
   created_at: <%= Time.zone.now %>
   user: michael
 
 <% 30.times do |n| %>
 micropost_<%= n %>:
   content: <%= Faker::Lorem.sentence(5) %>
+  event_date: <%= 2.days.since %>
   created_at: <%= 42.days.ago %>
   user: michael
 <% end %>
 
 ants:
   content: "Oh, is that what you want? Because that's how you get ants!"
+  event_date: <%= 2.days.since %>
   created_at: <%= 2.years.ago %>
   user: archer
 
 zone:
   content: "Danger zone!"
+  event_date: <%= 2.days.since %>
   created_at: <%= 3.days.ago %>
   user: archer
 
 tone:
   content: "I'm sorry. Your words made sense, but your sarcastic tone did not."
+  event_date: <%= 2.days.since %>
   created_at: <%= 10.minutes.ago %>
   user: lana
 
 van:
   content: "Dude, this van's, like, rolling probable cause."
+  event_date: <%= 2.days.since %>
   created_at: <%= 4.hours.ago %>
   user: lana

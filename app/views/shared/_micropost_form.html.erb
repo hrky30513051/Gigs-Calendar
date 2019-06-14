@@ -1,7 +1,14 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+      <%= f.text_area :event_date, class: "form-control datetimepicker-input",
+          data: {target: '#datetimepicker4', toggle: 'datetimepicker'}, placeholder: "Select your event date", readonly: true %>
+      <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+    <%= f.text_area :content, placeholder: "Compose new line up..." %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
   <span class="picture">
@@ -10,10 +17,20 @@
 <% end %>
 
 <script type="text/javascript">
+(function($){
+
+  $(function () {
+    $('#datetimepicker4').datetimepicker({
+      format: 'L'
+    })
+  });
+
   $('#micropost_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
     if (size_in_megabytes > 5) {
       alert('Maximum file size is 5MB. Please choose a smaller file.');
     }
   });
+
+})(jQuery);
 </script>
