@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20190606170017) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
-    t.date "event_date", default: "2019-06-06"
+    t.date "event_date"
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 

@@ -19,7 +19,7 @@ class Micropost < ApplicationRecord
 
     # event_dateに過去日は設定不可
     def event_date_cannot_be_in_the_past
-      if event_date.past?
+      if event_date.nil? || event_date.past?
         errors.add(:event_date, "can not specify past date")
       end
     end
