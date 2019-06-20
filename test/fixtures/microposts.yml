@@ -16,6 +16,12 @@ cat_video:
   created_at: <%= 2.hours.ago %>
   user: michael
 
+come_first:
+  content: "Today!"
+  event_date: <%= Date.today %>
+  created_at: <%= 5.minutes.ago %>
+  user: michael
+
 most_recent:
   content: "Writing a short test"
   event_date: <%= 1.days.since %>

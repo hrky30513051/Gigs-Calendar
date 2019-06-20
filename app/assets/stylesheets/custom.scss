@@ -289,6 +289,14 @@ input {
     margin-right: 10px;
     margin-top: 5px;
   }
+  .event_date {
+    border-bottom: 1px solid #e8e8e8;
+    background-color: white;
+    position: -webkit-sticky; /* Safari用 */
+    position:sticky; /* 要素をスクロールに応じて固定 */
+    top:50px; /* 縦スクロールに追従 */
+    z-index: 100; /* z-indexで最前面に持ってくる */
+  }
 }
 
 aside {

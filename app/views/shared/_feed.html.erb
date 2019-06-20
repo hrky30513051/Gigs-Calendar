@@ -1,6 +1,6 @@
 <% if @feed_items.any? %>
   <ol class="microposts">
-    <%= render @feed_items %>
+    <%= render partial: @feed_items, :locals => {:last_event_date => @last_event_date } %>
   </ol>
   <%= will_paginate @feed_items %>
 <% end %>
