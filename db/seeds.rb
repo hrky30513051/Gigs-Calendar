@@ -32,14 +32,16 @@ User.create!(name:  "Example User",
 
 # マイクロポスト
 users = User.order(:created_at).take(6)
-50.times do
-  content = "Line up:" << "\n" \
-          << Faker::Lorem.word << "\n" \
-          << Faker::Lorem.word << "\n" \
-          << Faker::Lorem.word << "\n" \
-          << "Open 18:00 / Start 19:00"
-  event_date = Faker::Date.between(Date.today, 1.year.from_now)
-  users.each { |user| user.microposts.create!(content: content, event_date: event_date) }
+users.each do |user|
+  50.times do
+    content = "Line up:" << "\n" \
+            << Faker::Artist.name << "\n" \
+            << Faker::Artist.name << "\n" \
+            << Faker::Artist.name << "\n" \
+            << "Open 18:00 / Start 19:00"
+    event_date = Faker::Date.between(Date.today, 1.year.from_now)
+    user.microposts.create!(content: content, event_date: event_date)
+  end
 end
 
 # リレーションシップ
