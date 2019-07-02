@@ -98,6 +98,14 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  #簡単な検索機能
+  def self.search(search) #self.でクラスメソッドとしている
+    if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索
+      User.where(['name LIKE ? and activated = ? and venue = ?', "%#{search}%", true, true])
+    else
+      User.all #全て表示。
+    end
+  end
 
   private
 

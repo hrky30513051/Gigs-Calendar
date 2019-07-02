@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def index
-    @users = User.where("activated = ? and venue = ?", true, true).paginate(page: params[:page])
+    if params[:search]  #Viewの検索Formで取得したパラメータがあればユーザーを検索する
+      @users = User.search(params[:search]).paginate(page: params[:page])
+    else #なければ有効なvenueを一覧で返す
+      @users = User.where("activated = ? and venue = ?", true, true).paginate(page: params[:page])
+    end
   end
 
   def show
