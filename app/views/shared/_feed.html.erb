@@ -3,4 +3,6 @@
     <%= render partial: @feed_items, :locals => {:last_event_date => @last_event_date } %>
   </ol>
   <%= will_paginate @feed_items %>
+<% else %>
+  There's No Event scheduled at venues you follow.. Find <%= link_to "Venues you like", users_path %>! 
 <% end %>

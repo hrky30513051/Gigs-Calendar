@@ -1,6 +1,6 @@
 # ユーザー
-User.create!(name:  "Example User",
-             email: "example@railstutorial.org",
+User.create!(name:  "Example Venue",
+             email: "examplevenue@gigscalender.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin:     true,
@@ -8,17 +8,8 @@ User.create!(name:  "Example User",
              activated: true,
              activated_at: Time.zone.now)
 
-User.create!(name:  "Example User2",
-             email: "notvenue@railstutorial.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin:     true,
-             venue:     false,
-             activated: true,
-             activated_at: Time.zone.now)
-
 99.times do |n|
-  name  = Faker::Name.name
+  name  = "Venue " + Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name:  name,
@@ -30,11 +21,23 @@ User.create!(name:  "Example User2",
                activated_at: Time.zone.now)
 end
 
+User.create!(name:  "Example User",
+             email: "exampleuser@gigscalender.com",
+             password:              "foobar",
+             password_confirmation: "foobar",
+             admin:     false,
+             venue:     false,
+             activated: true,
+             activated_at: Time.zone.now)
+
 # マイクロポスト
 users = User.order(:created_at).take(6)
 50.times do
-  content = Faker::Lorem.word << "\n" << Faker::Lorem.word << "\n" \
-            << Faker::Lorem.word
+  content = "Line up:" << "\n" \
+          << Faker::Lorem.word << "\n" \
+          << Faker::Lorem.word << "\n" \
+          << Faker::Lorem.word << "\n" \
+          << "Open 18:00 / Start 19:00"
   event_date = Faker::Date.between(Date.today, 1.year.from_now)
   users.each { |user| user.microposts.create!(content: content, event_date: event_date) }
 end
@@ -42,7 +45,7 @@ end
 # リレーションシップ
 users = User.all
 user  = users.first
-following = users[2..50]
-followers = users[3..40]
+following = users[1..50]
+followers = users[2..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
