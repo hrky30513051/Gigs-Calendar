@@ -17,7 +17,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     # 有効な送信
     content = "This micropost really ties the room together"
     event_date = Date.tomorrow
-    picture = fixture_file_upload('test/fixtures/rails.png', 'image/png')
+    picture = fixture_file_upload('test/fixtures/test_image.jpg', 'image/jpg')
     assert_difference 'Micropost.count', 1 do
       post microposts_path, params: { micropost:
                                       { content: content,
