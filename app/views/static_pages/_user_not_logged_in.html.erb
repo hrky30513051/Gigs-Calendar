@@ -10,22 +10,27 @@
   <ul class="bxslider mockups">
     <li>
       <h2>1. Find venues you like.</h2>
-      <%= image_tag 'mockup_find_venues.jpg', class: "mockup-img" %>
+      <%= image_tag 'mockup_find_venues.png', class: "mockup-img" %>
     </li>
     <li>
       <h2>2. Follow them.</h2>
-      <%= image_tag 'mockup_follow.jpg', class: "mockup-img" %>
+      <%= image_tag 'mockup_follow.png', class: "mockup-img" %>
     </li>
     <li>
       <h2>3. You can see events in date order!</h2>
-      <%= image_tag 'mockup_feed.jpg', class: "mockup-img" %>
+      <%= image_tag 'mockup_feed.png', class: "mockup-img" %>
     </li>
     <li>
       <h2>4. If you are venue, post your events.</h2>
-      <%= image_tag 'mockup_post.jpg', class: "mockup-img" %>
+      <%= image_tag 'mockup_post.png', class: "mockup-img" %>
     </li>
   </ul>
   <h2>Let's enjoy more gigs!</h2>
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 
+<script>
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
+});
+</script>

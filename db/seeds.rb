@@ -1,6 +1,6 @@
 # ユーザー
 User.create!(name:  "Example Venue",
-             email: "examplevenue@gigscalender.com",
+             email: "examplevenue@gigscalendar.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin:     true,
@@ -9,7 +9,7 @@ User.create!(name:  "Example Venue",
              activated_at: Time.zone.now)
 
 99.times do |n|
-  name  = "Venue " + Faker::Name.name
+  name  = "Venue " + Faker::Lorem.word
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name:  name,
@@ -22,7 +22,7 @@ User.create!(name:  "Example Venue",
 end
 
 User.create!(name:  "Example User",
-             email: "exampleuser@gigscalender.com",
+             email: "exampleuser@gigscalendar.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin:     false,
