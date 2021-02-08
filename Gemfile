@@ -4,7 +4,7 @@ gem 'rails',        '5.1.6'
 gem 'bcrypt',         '3.1.12'
 gem 'faker',          '1.7.3'
 gem 'fog-aws', group: :production
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick',             '4.7.0'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
